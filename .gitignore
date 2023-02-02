@@ -1,2 +1,5 @@
 # VS Code Setup & Configuration Files
 /.vscode/
+
+# Assets: Image Files
+/src/assets/*.png
