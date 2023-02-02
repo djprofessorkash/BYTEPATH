@@ -6,14 +6,9 @@ a functioning version of the indie game BYTEPATH using
 Lua and its relevant library, LÖVE.
 ]]--
 
-function love.load()
-
-end
-
-function love.update(dt)
-
-end
+if pcall(require, "lldebugger") then require("lldebugger").start() end
+if pcall(require, "mobdebug") then require("mobdebug").start() end
 
 function love.draw()
-
+    love.graphics.print("Hello World!", 100, 100)
 end
