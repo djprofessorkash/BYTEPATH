@@ -19,7 +19,7 @@ function love.load()
 end
 
 -- GRAPHICAL UPDATING FUNCTION --
-function love.update(delta)
+function love.update(delta_time)
 end
 
 -- GRAPHICAL DRAWING FUNCTION --
@@ -38,7 +38,7 @@ function love.run()
     -- Ensure first frame's delta does not include processing time by `love.load()`
     if love.timer then love.timer.step() end
 
-    local delta = 0
+    local delta_time = 0
 
     -- MAIN GAME LOOP --
     while true do
@@ -58,12 +58,12 @@ function love.run()
         -- Update delta before passing to native updater
         if love.timer then
             love.timer.step()
-            delta = love.timer.getDelta()
+            delta_time = love.timer.getDelta()
         end
 
         -- Invoke native updater and draw to game environment
         -- NOTE: Will pass zero-value to native updater if `love.timer` is disabled
-        if love.update then love.update(delta) end
+        if love.update then love.update(delta_time) end
 
         if love.graphics and love.graphics.isActive() then
             love.graphics.clear(love.graphics.getBackgroundColor())
