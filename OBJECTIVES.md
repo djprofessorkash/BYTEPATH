@@ -12,6 +12,12 @@ Afterwards, the primary "game loop" for the entire game will be set up as a boil
 
 1. What is the role that Vsync plays in the game loop? (It is enabled by default and it can be disabled by calling `love.window.setMode` with the `vsync` attribute set to false.)
 
+    > Vertical synchronization ensures that the relative performant rate of the game's loop is "synchronized" or capped to the framerate of the computer or display device. 
+    > 
+    > Disabling VSync can allow for higher demonstrable framerates at the cost of potential "ghosting" or "tearing" of visual artifacts occurrent when game loop updates occur too quickly to be rendered properly in real time. 
+    > 
+    > On the other hand, enabling VSync can cap the framerate at a smooth level, albeit one that can be relatively slower for user's preference(s).
+
 2. Implement the `Fixed Delta Time` loop from the **[Fix Your Timestep article](https://gafferongames.com/game-physics/fix-your-timestep/)** by changing `love.run`.
 
 3. Implement the `Variable Delta Time` loop from the **[Fix Your Timestep article](https://gafferongames.com/game-physics/fix-your-timestep/)** by changing `love.run`.
