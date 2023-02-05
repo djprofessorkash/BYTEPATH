@@ -14,6 +14,8 @@ if pcall(require, "mobdebug") then require("mobdebug").start() end
 function love.load()
     local IMG_PATH = "assets/german-shepherd.png"
     image = love.graphics.newImage(IMG_PATH)
+    -- Toggle VSync on or off
+    love.window.setVSync(1)
 end
 
 -- GRAPHICAL UPDATING FUNCTION --
